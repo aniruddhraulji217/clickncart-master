@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "1068664914210",
+    "project_id": "multivendorapplication-c74a0",
+    "storage_bucket": "multivendorapplication-c74a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068664914210:android:dc14da2e089074aeb2257b",
+        "android_client_info": {
+          "package_name": "com.example.clickncart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068664914210-aqmacoapdalo2sn8d5n344uj9cb131nt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clickncart",
+            "certificate_hash": "5d4b6a1f73575ff8aa69ae49752a99a1e5275836"
+          }
+        },
+        {
+          "client_id": "1068664914210-1q70m27rd71gaejq017u0ret3u34t4re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBzGEBkOhvQBFulODV40C7jOCFK7csHPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068664914210-1q70m27rd71gaejq017u0ret3u34t4re.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1068664914210-8de1ul706fkbd67mc1hfngrv4ua6ar73.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cncAdmin.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068664914210:android:2eb8eacddd2b6a78b2257b",
+        "android_client_info": {
+          "package_name": "com.example.cnc_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068664914210-1q70m27rd71gaejq017u0ret3u34t4re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBzGEBkOhvQBFulODV40C7jOCFK7csHPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068664914210-1q70m27rd71gaejq017u0ret3u34t4re.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1068664914210-8de1ul706fkbd67mc1hfngrv4ua6ar73.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cncAdmin.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

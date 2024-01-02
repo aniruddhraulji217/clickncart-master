@@ -13,7 +13,7 @@ class _BannerWidgetState extends State<BannerWidget> {
 
   Future<void> getBanners() async {
     final QuerySnapshot querySnapshot =
-    await _firestore.collection('banners').get();
+        await _firestore.collection('banners').get();
     querySnapshot.docs.forEach((doc) {
       setState(() {
         _bannerImage.add(doc['image']);
@@ -44,22 +44,22 @@ class _BannerWidgetState extends State<BannerWidget> {
             child: _bannerImage.isEmpty
                 ? Center(child: CircularProgressIndicator())
                 : PageView.builder(
-              itemCount: _bannerImage.length,
-              onPageChanged: (index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-              itemBuilder: (context, index) {
-                return ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    _bannerImage[index],
-                    fit: BoxFit.cover,
+                    itemCount: _bannerImage.length,
+                    onPageChanged: (index) {
+                      setState(() {
+                        _currentPage = index;
+                      });
+                    },
+                    itemBuilder: (context, index) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.network(
+                          _bannerImage[index],
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    },
                   ),
-                );
-              },
-            ),
           ),
           Positioned(
             bottom: 10,
@@ -67,7 +67,7 @@ class _BannerWidgetState extends State<BannerWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 _bannerImage.length,
-                    (index) => buildDot(index),
+                (index) => buildDot(index),
               ),
             ),
           ),

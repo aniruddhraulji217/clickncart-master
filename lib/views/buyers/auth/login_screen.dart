@@ -1,6 +1,8 @@
+import 'package:clickncart/controllers/auth_controller.dart';
 import 'package:clickncart/views/buyers/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/show_snackBar.dart';
 import '../main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,11 +12,27 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final AuthController _authController = AuthController();
   late String email;
   late String password;
 
-  _loginUsers() async {
-    // Your existing login logic
+  Future<void> _loginUsers() async {
+    if (_formKey.currentState!.validate()) {
+      String res = await _authController.loginUsers(email, password);
+
+      if (res == 'success') {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (BuildContext context) {
+            return MainScreen();
+          }),
+        );
+      } else {
+        showSnack(context, res);
+      }
+    } else {
+      showSnack(context, 'Fields must not be empty');
+    }
   }
 
   @override
@@ -48,16 +66,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: TextFormField(
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Please Enter Email ID ';
+                          return 'Please Enter Email ID';
                         } else {
                           return null;
                         }
                       },
-                      onChanged: ((value) {
+                      onChanged: (value) {
                         email = value;
-                      }),
+                      },
                       decoration: InputDecoration(
-                        labelText: 'Enter Email Address,',
+                        labelText: 'Enter Email Address',
                         labelStyle: TextStyle(color: Colors.black),
                         prefixIcon: Icon(Icons.email, color: Colors.black),
                       ),
@@ -68,17 +86,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: TextFormField(
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'Please Enter Password ';
+                          return 'Please Enter Password';
                         } else {
                           return null;
                         }
                       },
-                      onChanged: ((value) {
+                      onChanged: (value) {
                         password = value;
-                      }),
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
-                        labelText: 'Enter password',
+                        labelText: 'Enter Password',
                         labelStyle: TextStyle(color: Colors.black),
                         prefixIcon: Icon(Icons.lock, color: Colors.black),
                       ),
@@ -88,16 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {
-                      _loginUsers();
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                          // Keep your existing navigation logic
-                          return MainScreen();
-                        }),
-                      );
-                    },
+                    onTap: _loginUsers,
                     child: Container(
                       width: MediaQuery.of(context).size.width - 40,
                       height: 50,
@@ -123,7 +132,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            // Keep your existing navigation logic
                             return RegisterScreen();
                           }));
                         },

@@ -1,4 +1,5 @@
-import 'package:clickncart/views/buyers/auth/register_screen.dart';
+import 'package:cli'
+    'ckncart/views/buyers/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../main_screen.dart';

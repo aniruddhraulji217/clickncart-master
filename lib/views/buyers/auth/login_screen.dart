@@ -1,6 +1,8 @@
+import 'package:clickncart/controllers/auth_controller.dart';
 import 'package:clickncart/views/buyers/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/show_snackBar.dart';
 import '../main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,10 +12,26 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final AuthController _authController = AuthController();
   late String email;
   late String password;
 
   _loginUsers() async {
+    if(_formKey.currentState!.validate()) {
+      String res = await _authController.loginUsers(email, password);
+
+      if (res == 'success' ) {
+        return Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (BuildContext context) {
+              return MainScreen();
+            }));
+      } else {
+        return showSnack(context, res);
+      }
+
+    } else {
+      return showSnack(context, 'Fields must not be empty ');
+    }
     // Your existing login logic
   }
 

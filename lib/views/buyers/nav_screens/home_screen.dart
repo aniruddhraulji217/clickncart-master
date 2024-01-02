@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF3366FF), Color(0xFF00CCFF)],
+            colors: [Color(0xFF809FE5), Color(0xDB96400C)],
           ),
         ),
         child: SingleChildScrollView(

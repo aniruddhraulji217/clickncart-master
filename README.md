@@ -36,9 +36,10 @@ You can preview all screenshots in the [screenshorts folder](https://github.com/
 ---
 
 ## 👨‍💻 Developed by
-
-**Aniruddhsinh Raulji**  
-[GitHub Profile](https://github.com/aniruddhraulji217)
+**Aniruddhsinh Raulji**
+[GitHub Profile](https://github.com/aniruddhraulji217)      
+**Kirtan Rana**
+[GitHub Profile](https://github.com/RanaKirtan-bit)
 
 ---
 
